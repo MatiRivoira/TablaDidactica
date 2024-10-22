@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+
+ion-content {
+    --ion-font-family: 'Poppins', cursive;
+    --background: linear-gradient(to top, #00bffe, #00bffe, #81c41c, #81c41c); // Define un degradado como fondo
+    color: #333333;
+
+    margin: 0;
+    padding: 0 20px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    // Se asegura que el contenido de ion-content ocupe toda la altura disponible
+    .scroll-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+}
+
+
+.login-container {
+    position: relative;  
+    top: 50%;            
+    left: 50%;          
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 500px;
+    margin-top: 35px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    span {
+        justify-content: space-between; 
+        align-items: center;
+        padding: 10px;
+        margin-left: -20px;
+        position: absolute;
+        display: flex;
+        margin-top: -100px;
+        z-index: -1;
+        width: 100%;
+
+        svg {
+            margin-top: -120px;
+        }
+    }
+    
+
+    h1, h2 {
+        text-align: start;
+        color: #666666;
+    }
+
+    form {
+        h2 {
+            margin-top: 20px; margin-bottom: 10px; text-align: center;
+        }
+    }
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+label {
+    display: flex;
+    text-align: start !important;
+    margin-left: 20px;
+    color: #666666;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    background-color: #ffffff;
+    color: #666666;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #666666;
+    border-radius: 30px;
+    box-sizing: border-box; // Incluye el padding en el ancho total
+    font-size: x-small;
+}
+
+button {
+    color: white;
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    background: linear-gradient(to top, #4d9c25, #ace74d) !important; // Usar 'background' en lugar de 'background-color'
+    font-size: large;
+}
+
+.box-users {
+    margin-top: 10px;
+    display: flex;        /* Activa Flexbox para el contenedor de botones */
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center;     /* Alinea los botones verticalmente en el centro */
+    width: 100%; 
+
+    button {
+        display: flex; /* Flexbox para alinear el contenido */
+        align-items: center; /* Alineación vertical centrada */
+        justify-content: center; /* Alineación horizontal centrada */
+        text-align: center; /* Asegura el texto centrado, útil para cuando el texto está en múltiples líneas */
+        color: #666666;
+        border: none;
+        background: none !important;
+        font-size: small;
+
+        svg {
+            margin-right: 5px; /* Espacio entre el texto y el SVG */
+        }
+    }
+}
+
+
+.clear-btn {
+    text-align: end !important;
+    color: #666666;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+}
+
+.err-msg {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: red;
+    font-size: small;
+    margin-top: -10px;
+    left: 0;
+}
+
+.err-msg-top {
+    color: red;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.input-box i {
+    color: #333333;
+    position: absolute;
+    margin-top: 5px;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 25px;
+}
+
+.icon-error {
+    color: red !important;
+}
+
+.input-error {
+    border: 2px solid red !important;
+}
+
+ion-spinner {
+    position: fixed;  /* Usamos fixed para posicionarlo en relación a la ventana del navegador */
+    top: 50%;         /* Centra verticalmente */
+    left: 50%;        /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta la posición exacta al centro */
+    background-color: white;          /* Fondo blanco */                    /* Espaciado interno para dar más área al fondo */
+    border-radius: 10px;              /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra suave para resaltar el spinner */
+    z-index: 1000;                    /* Asegura que el spinner esté encima de otros elementos */
+    width: 100px;                     /* Define un ancho fijo */
+    height: 100px;                    /* Define una altura fija */
+    display: flex;                    /* Flexbox para centrar el icono de spinner dentro del div */
+    align-items: center;              /* Alinea verticalmente el contenido de flexbox */
+    justify-content: center;  
+    color: #81c41c;
+    border: 10px solid white;
+}
+
+@media (orientation: landscape) {
+    .login-container {
+        margin-top: 5px;
+        height: fit-content;
+        padding-bottom: 10px;
+    }
+
+    form {
+        padding-bottom: 0;
+    }
+
+    h1 {
+        font-size: 1em;
+        margin-bottom: 0px;
+    }
+
+    h2 {
+        font-size: 0.9em;
+        margin-top: 0px !important;
+        margin-bottom: 0px !important;
+    }
+
+    label {
+        font-size: 0.9em;
+        height: 30px;
+        margin-bottom: -5px;
+    }
+
+    
+
+    input[type="text"],
+    input[type="password"] {
+        font-size: 0.8em;
+        height: 40px;
+    }
+
+    .input-box {
+        i {
+            top: 50%;
+        }
+    }
+
+    button {
+        height: 40px;
+        font-size: 0.8em;
+    }
+
+    .box-users button {
+        font-size: 0.6em;
+    }
+
+    .clear-btn {
+        margin: 0;
+        margin-right: 5px;
+        font-size: 0.8em;
+    }
+}

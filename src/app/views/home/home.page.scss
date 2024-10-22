@@ -1,0 +1,159 @@
+ion-content{
+  --background: url("../../../assets/img/background.webp"); // Define un degradado como fondo
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Asegura que ocupe toda la altura disponible */
+}
+
+.top-controls {
+  display: flex;       /* Utiliza Flexbox */
+  justify-content: space-between; /* Separa los elementos entre sí al máximo posible */
+  width: 100%;         /* Opcional: Asegura que el div ocupe todo el ancho disponible */
+  padding: 20px;
+  padding-bottom: 10px;
+
+  button {
+    padding: 8px 16px;   /* Espaciado interno para hacerlos más grandes */
+    border: 2px solid #ffffff; /* Borde gris claro */
+    background-color: transparent;
+    border-radius: 20px;
+    display: flex;
+    align-items: center; /* Alinea verticalmente en el centro */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    backdrop-filter: blur(20px);
+    box-shadow:  0 0 10px rgba(0, 0, 0, .2);
+
+    img {
+      width: 35px;
+      height: 25px;
+      border-radius: 5px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.dropDown {
+  position: absolute;
+  margin-top: 5px;
+  padding: 8px 15px 8px 15px;   /* Espaciado interno para hacerlos más grandes */
+  border: 2px solid #ffffff; /* Borde gris claro */
+  border-radius: 20px;
+  align-items: center; /* Alinea verticalmente en el centro */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  text-align: center;
+  backdrop-filter: blur(20px);
+  box-shadow:  0 0 10px rgba(0, 0, 0, .5);
+
+  img {
+    margin: 5px;
+    display: block;
+    width: 45px;
+    height: 30px;
+    border-radius: 5px;
+  }
+}
+
+.mid-controls {
+  display: flex;
+  flex-direction: row; /* Alinea los botones horizontalmente */
+  flex-wrap: wrap; /* Permite que los botones se ajusten según el ancho disponible */
+  justify-content: center; /* Centra los botones horizontalmente */
+  align-items: center; /* Centra los botones verticalmente */
+  width: 100%; /* Opcional, depende de cómo quieras manejar el ancho */
+  height: 80vh;
+  padding: 0px 20px;
+
+  button {
+    flex: 1 1 auto; /* Ocupa espacio disponible, adaptándose automáticamente */
+    width: 130px;
+    height: 20vh; /* Usa vh para que se ajuste con la altura del viewport */
+    margin: 1vh;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform 0.1s ease;
+  }
+  
+  button:active {
+    transform: scale(0.95); /* Reduce el tamaño del botón a 95% cuando se presiona */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+  }
+}
+
+.bottom-controls {
+  align-items: end;
+  justify-content: end;
+  text-align: end;
+  width: 100%;
+  padding: 20px;
+  padding-top: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  button {
+    background: none;
+    border: none;
+
+    svg {
+      filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.7));
+      transition: transform 0.5s ease;
+    }
+  }
+
+  button:active {
+    svg {
+      transform: rotate(150deg);
+    }
+  }
+
+  .dropDown {
+    position: absolute;  // Esto es para asegurar la posición del .dropDown si es necesario
+    right: 50px;
+    margin-top: -10px;
+  
+    button {
+      display: flex;  // Convierte el botón en un contenedor flex
+      flex-direction: row;  // Organiza los elementos internos horizontalmente
+      align-items: center;  // Centra los elementos verticalmente en el contenedor
+      justify-content: center;  // Centra los elementos horizontalmente en el contenedor
+      text-align: center;  // Centra el texto dentro del span si es necesario
+      width: 100%;  // Asegúrate de que el botón ocupe el ancho necesario o ajusta según tus necesidades
+  
+      span {
+        text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      }
+      svg {
+        filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.8));
+        margin-right: 5px; // Añade espacio entre el texto y el SVG
+      }
+    }
+
+    button:active {
+      svg {
+        transform: none;
+      }
+    }
+  }
+}
+
+@media (orientation: landscape) {
+  .mid-controls {
+    position: absolute;
+    padding: 20px;
+    height: 100vh;
+    z-index: -1;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    top: 0;
+    button {
+      height: 150px;
+    }
+  }
+}
